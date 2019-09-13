@@ -5,3 +5,5 @@ authors = ["Alexander Montgomery <evaderxander@gmail.com>"]
 edition = "2018"
 
 [dependencies]
+router = "0.6.0"
+iron = "0.6.1"
