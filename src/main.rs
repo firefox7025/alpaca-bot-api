@@ -60,7 +60,7 @@ fn main() {
                           .arg(Arg::with_name("Alpaca url")
                               .help("The endpoint url to use for alpaca")
                               .required(false)
-                              .index(1))
+                              .index(2))
                           .get_matches();
 
 
