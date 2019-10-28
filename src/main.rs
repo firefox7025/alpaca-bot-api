@@ -3,8 +3,8 @@ extern crate iron;
 extern crate router;
 
 extern crate log;
+extern crate hyper;
 extern crate log4rs;
-extern crate reqwest;
 extern crate serde_derive;
 
 mod alpaca;
@@ -49,7 +49,7 @@ fn main() {
     info!("Starting service...");
 
 
-    let matches = App::new("Alpaca Bot Trader API")
+    let _matches = App::new("Alpaca Bot Trader API")
                           .version("1.0")
                           .author("Alexander Montgomery <evaderxander@gmail.com>")
                           .about("Service that executes actions for making trades")

@@ -11,7 +11,7 @@ uuid = { version = "0.7", features = ["serde", "v4"] }
 json = "0.12.0"
 rustc-serialize = "0.3"
 serde_derive = "1.0.100"
-reqwest = "0.9.20"
 clap = "2.33.0"
 log = "0.4.8"
 log4rs = "0.8.3"
+hyper = "0.12"
