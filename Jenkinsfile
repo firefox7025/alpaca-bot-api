@@ -19,6 +19,7 @@ spec:
 
   node(POD_LABEL) {
     stage('Build') {
+        git 'https://github.com/firefox7025/alpaca-bot-api.git'
       container('rust') {
           sh 'cargo build --release'
       }
