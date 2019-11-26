@@ -3,7 +3,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   labels:
-    some-label: some-label-value
+    some-label: builder
 spec:
   containers:
   - name: rust
@@ -16,7 +16,8 @@ spec:
 
   node(POD_LABEL) {
     stage('Build') {
-      sh "git rev-parse --short HEAD"
+    checkout scm
+    sh "git rev-parse --short HEAD | echo"
       container('rust') {
         sh 'cargo build --release'
       }
