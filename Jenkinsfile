@@ -11,17 +11,16 @@ spec:
     command:
     - cat
     tty: true
-    env:
-    - name: CONTAINER_ENV_VAR
-      value: container-env-var-value
 """
   ) {
 
   node(POD_LABEL) {
     stage('Build') {
         git 'https://github.com/firefox7025/alpaca-bot-api.git'
+        git branch: 'branchName', credentialsId: 'your_credentials', url: "giturlrepo"
       container('rust') {
-          sh 'cargo build --release'
+        sh 'echo ${GIT_BRANCH}'
+        sh 'cargo build --release'
       }
     }
   }
