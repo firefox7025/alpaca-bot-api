@@ -15,11 +15,10 @@ spec:
   ) {
 
   node(POD_LABEL) {
-    stage('Build') {
+    stage('Build and test') {
     checkout scm
-    sh "git rev-parse --short HEAD | echo"
       container('rust') {
-        sh 'cargo build --release'
+        sh 'cargo build --release && cargo test'
       }
     }
   }
