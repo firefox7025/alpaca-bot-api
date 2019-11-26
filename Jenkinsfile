@@ -16,8 +16,7 @@ spec:
 
   node(POD_LABEL) {
     stage('Build') {
-        git 'https://github.com/firefox7025/alpaca-bot-api.git'
-        git branch: 'branchName', credentialsId: 'your_credentials', url: "giturlrepo"
+        git branch: GIT_BRANCH, url: GIT_URL
       container('rust') {
         sh 'echo ${GIT_BRANCH}'
         sh 'cargo build --release'
