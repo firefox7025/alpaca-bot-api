@@ -16,9 +16,8 @@ spec:
 
   node(POD_LABEL) {
     stage('Build') {
-      sh "git rev-parse --short HEAD > .git/commit-id"
+      sh "git rev-parse --short HEAD"
       container('rust') {
-        sh 'echo .git/commit-id'
         sh 'cargo build --release'
       }
     }
